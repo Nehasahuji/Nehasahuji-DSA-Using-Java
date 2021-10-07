@@ -22,11 +22,11 @@ public class SecondLargestElement {
 			}
 		}
 
-		for (int itr = 0; itr < length; itr++) {
-			if (Array[itr] < maxElement && Array[itr] > secondMaxElement) {
-				secondMaxElement = Array[itr];
-			}
-		}
+//		for (int itr = 0; itr < length; itr++) {
+//			if (Array[itr] < maxElement && Array[itr] > secondMaxElement) {
+//				secondMaxElement = Array[itr];
+//			}
+//		}
 
 		if (maxElement == secondMaxElement) {
 			return -1;

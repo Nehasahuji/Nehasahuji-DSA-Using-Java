@@ -1,11 +1,12 @@
-/*Problem: Reverse an array
+/*Problem:Left Rotate by one
   time complexity: O(n)
   space complexity:O(1)
   
-  Example:10 5 7 30  
-    output:30 7 5 10
-    input:  3 5 10
-    output:10 5 3
+  Example:1 2 3 4 5
+    output:2 3 4 5 1
+    input: 10 12 15
+    output:12 15 10
+    
           
   Approach:   
 */
@@ -14,23 +15,10 @@ package array;
 
 import java.util.Scanner;
 
-public class ReverseAnArray {
+public class LeftRotateByOne {
 
-	public static void reverse(int[] Array, int length) {
-
-		int high = length - 1, low = 0;
-		while (high > low) {
-			int temp;
-			temp = Array[low];
-			Array[low] = Array[high];
-			Array[high] = temp;
-			high--;
-			low++;
-		}
-
-	}
-
-	public static void main(String args[]) {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
 
 		Scanner sc = new Scanner(System.in);
 
@@ -52,13 +40,24 @@ public class ReverseAnArray {
 
 		System.out.println();
 
-		reverse(Array, length);
+		LeftRotateToOnePlace(Array, length);
 
-		System.out.println("After swapping Array is ");
+		System.out.println("After rotating array to one place ");
 
 		for (int itr : Array) {
 			System.out.print(itr + " ");
 		}
 
 	}
+
+	private static void LeftRotateToOnePlace(int[] array, int length) {
+
+		int temp = array[0];
+		for (int i = 1; i < length; i++) {
+			array[i - 1] = array[i];
+		}
+		array[length - 1] = temp;
+
+	}
+
 }
